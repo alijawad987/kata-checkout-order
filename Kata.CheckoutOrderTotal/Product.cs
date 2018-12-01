@@ -12,7 +12,13 @@
 
         public decimal Calculate(int itemCount)
         {
-            return (UnitPrice - Markdown) * itemCount;
+            var markedDownUnitPrice = UnitPrice - Markdown;
+            if (Special != null)
+            {
+                return markedDownUnitPrice + (markedDownUnitPrice * Special.Ratio * (itemCount - 1));
+            }
+
+            return markedDownUnitPrice * itemCount;
         }
     }
 }

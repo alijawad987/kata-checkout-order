@@ -18,7 +18,6 @@ namespace Kata.CheckoutOrderTotal.Tests.CatalogTests
                     Special =
                         new Special
                         {
-                            ItemCount = 2,
                             Ratio = 0.50m,
                             Limit = 4
                         }
@@ -30,7 +29,6 @@ namespace Kata.CheckoutOrderTotal.Tests.CatalogTests
             Assert.Equal(3.99m, addedProduct.UnitPrice);
             Assert.Equal(0.50m, addedProduct.Markdown);
             Assert.NotNull(addedProduct.Special);
-            Assert.Equal(2, addedProduct.Special.ItemCount);
             Assert.Equal(0.50m, addedProduct.Special.Ratio);
             Assert.Equal(4, addedProduct.Special.Limit);
         }
