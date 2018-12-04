@@ -42,6 +42,8 @@ namespace Kata.CheckoutOrderTotal
 
         public int this[string productName] => _contents[productName];
 
+        public int Count => _contents.Count;
+
         public decimal CalculateTotal()
         {
             var sum = 0.0m;
