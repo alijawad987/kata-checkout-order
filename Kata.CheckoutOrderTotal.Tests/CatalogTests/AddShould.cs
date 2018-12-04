@@ -19,7 +19,9 @@ namespace Kata.CheckoutOrderTotal.Tests.CatalogTests
                         new Special
                         {
                             Ratio = 0.50m,
-                            Limit = 4
+                            Limit = 4,
+                            BuyCount = 1,
+                            SpecialCount = 1
                         }
                 });
 
@@ -31,6 +33,7 @@ namespace Kata.CheckoutOrderTotal.Tests.CatalogTests
             Assert.NotNull(addedProduct.Special);
             Assert.Equal(0.50m, addedProduct.Special.Ratio);
             Assert.Equal(4, addedProduct.Special.Limit);
+            Assert.Single(catalog.Products);
         }
     }
 }
